@@ -1,0 +1,119 @@
+
+
+/* Root Variables */
+:root {
+    --font-primary: "Playwrite CA", serif;
+    --font-weight-normal: 200;
+    --font-weight-bold: 800;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-primary);
+    font-optical-sizing: auto;
+    font-weight: var(--font-weight-normal);
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Valentine Card */
+.card {
+    width: 320px;
+    height: 220px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.front, .inside {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Front Cover */
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dd74ff;
+    color: lightgoldenrodyellow;
+
+}
+
+.click {
+    color: lightgoldenrodyellow;
+}
+
+/* Inside Message */
+.inside {
+    background-color: white;
+    color: #fc466b;
+    transform: rotateY(180deg);
+}
+
+.note {
+    color: #3f5efb;
+}
+
+.inside button {
+    margin-top: 20px;
+    padding: 8px 15px;
+    font-family: Playwrite CA;
+    border: none;
+    background-color: #3f5efb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    
+}
+
+.inside button:hover {
+    background-color: #3f5efb;
+}
+
+/* Open Card Animation */
+.open .front {
+    transform: rotateY(180deg);
+}
+
+.open .inside {
+    transform: rotateY(360deg);
+}
+
+/* Variable Font Weight Effect */
+.title {
+    font-weight: var(--font-weight-bold);
+    transition: font-weight 0.3s ease-in-out;
+    border: 2px dashed #ffffff; /* dashed border */
+    padding: 10px 15px; /* Space around text */
+    display: inline-block; /* Ensures border wraps text */
+    border-radius: 10px; /* Rounded corners */
+}
+
+
+.message {
+    font-weight: var(--font-weight-normal);
+    transition: font-weight 0.5s ease-in-out;
+}
+
+.open .message {
+    font-weight: var(--font-weight-bold);
+}
+
+
